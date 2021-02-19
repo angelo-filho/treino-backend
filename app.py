@@ -1,11 +1,14 @@
+import dotenv
+import os
 from flask import Flask, request
 from bson.json_util import dumps
 from flask_pymongo import PyMongo
 
+dotenv.load_dotenv()
+
 app = Flask(__name__)
 
-# app.config['MONGO_URI'] = 'mongodb://localhost:27017/boberto_database'
-app.config['MONGO_URI'] = 'mongodb+srv://admin:12345@cluster0.cjh8u.mongodb.net/boberto_database?retryWrites=true&w=majority'
+app.config['MONGO_URI'] = os.environ['DATABASE_URI']
 
 mongo = PyMongo(app)
 
