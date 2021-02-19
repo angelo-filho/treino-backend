@@ -11,20 +11,9 @@ mongo = PyMongo(app)
 
 produtos = mongo.db.produtos
 
-# produtos = [
-#   {
-#     "nome": "PS5",
-#     "valor": 4999.99
-#   },
-#   {
-#     "nome": "Pczao tunado",
-#     "valor": 7200.80
-#   }
-# ]
-
 @app.route('/', methods=['GET'])
 def home():
-  return 'Hello City!'
+  return 'Salve henricada'
 
 # Lendo todos produtos
 @app.route('/produtos', methods=['GET'])
