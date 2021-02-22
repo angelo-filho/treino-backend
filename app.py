@@ -4,11 +4,8 @@ from flask import Flask, request
 from bson.json_util import dumps
 from flask_pymongo import PyMongo
 
-try:
-  dotenv.load_dotenv('./.env')
-except:
-  dotenv.load_dotenv('./.env.dev')
 
+dotenv.load_dotenv('./.env')
 
 app = Flask(__name__)
 
