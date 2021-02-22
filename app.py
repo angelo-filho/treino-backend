@@ -4,7 +4,11 @@ from flask import Flask, request
 from bson.json_util import dumps
 from flask_pymongo import PyMongo
 
-dotenv.load_dotenv()
+try:
+  dotenv.load_dotenv('./.env')
+except:
+  dotenv.load_dotenv('./.env.dev')
+
 
 app = Flask(__name__)
 
@@ -16,7 +20,7 @@ produtos = mongo.db.produtos
 
 @app.route('/', methods=['GET'])
 def home():
-  return 'Salve henricada'
+  return 'Salve miguels'
 
 # Lendo todos produtos
 @app.route('/produtos', methods=['GET'])
