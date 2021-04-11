@@ -55,4 +55,4 @@ def deletar_produto(id):
   return dumps('Deletado com sucesso =D')
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  app.run()
