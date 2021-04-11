@@ -15,10 +15,6 @@ mongo = PyMongo(app)
 
 produtos = mongo.db.produtos
 
-@app.route('/', methods=['GET'])
-def home():
-  return 'Salve miguels'
-
 # Lendo todos produtos
 @app.route('/produtos', methods=['GET'])
 def pegar_todos_produtos():
